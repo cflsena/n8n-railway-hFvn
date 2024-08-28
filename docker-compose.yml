@@ -16,19 +16,3 @@ services:
       - PORT=5555
     ports:
       - "5555:5555"
-    depends_on:
-      - postgres
-
-  postgres:
-    image: postgres:12
-    environment:
-      - POSTGRES_DB=n8n
-      - POSTGRES_USER=n8n
-      - POSTGRES_PASSWORD=n8n_password
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
-volumes:
-  postgres_data:
